@@ -1,0 +1,20 @@
+{
+  "name": "testpublish",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "wsrun -m test"
+  },
+  "author": "",
+  "license": "ISC",
+  "workspaces": {
+    "packages": [
+      "packages/!(project1)/*"
+    ]
+  },
+  "devDependencies": {
+    "wsrun": "^5.2.4",
+    "yarn": "^1.22.19"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "testpackage-praveen-project2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified project2\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
