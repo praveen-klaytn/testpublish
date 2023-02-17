@@ -3,6 +3,11 @@
 
 name: NPM publish on release
 
+on:
+  push:
+    branches:
+      - main
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,12 +24,12 @@ jobs:
       - name: testing
         run: npm run test
       - name: Publish package on NPM 📦
-        run: npx pnpm --filter "testpackage-*" --filter !"testpackage-praveen-project1" -r publish --publish-branch main --no-git-check --access public
+        run: npx pnpm --filter "testpackage-*" --filter !"testpackage-praveen-project1" -r publish --no-git-check --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Install project1 dependencies
         run: cd project1 && npm install --force
       - name: Publish project1 package on NPM 📦
-        run: npx pnpm --filter "testpackage-praveen-project1" -r publish --publish-branch main --no-git-check --access public
+        run: npx pnpm --filter "testpackage-praveen-project1" -r publish --no-git-check --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
